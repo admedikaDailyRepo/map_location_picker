@@ -37,8 +37,22 @@ dependencies:
         sdk: flutter
 
     google_maps_flutter: ^2.9.0
-    form_builder_extra_fields: ^11.0.0
-    flutter_typeahead: ^5.2.0
+    # REAL TypeAhead :
+    # form_builder_extra_fields: ^11.0.0
+    # My form_builder_extra_fields : 
+    form_builder_extra_fields: 
+      git:
+        url: https://github.com/admedikaDailyRepo/form_builder_extra_fields.git
+    # path: flutter_inappwebview
+        ref: 10.2.0-my-flutter_typeahead
+    # REAL TypeAhead :
+    # flutter_typeahead: ^5.2.0
+    # My Flutter Typeahead : 
+    flutter_typeahead: 
+      git:
+        url: https://github.com/admedikaDailyRepo/flutter_typeahead.git
+    # path: flutter_inappwebview
+        ref: manogi21/adding_rawscroll
     google_maps_webapi: ^0.0.22
     geolocator: ^12.0.0
     http: ^1.2.2

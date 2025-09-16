@@ -448,7 +448,7 @@ class _PlacesAutocompleteState extends State<PlacesAutocomplete> {
                 });
                 return completer.future;
               },
-              onSelected: (value) async {
+              onSuggestionSelected: (value) async {
                 _controller.selection =
                     TextSelection.collapsed(offset: _controller.text.length);
                 _getDetailsByPlaceId(value.placeId ?? "", context);
@@ -467,7 +467,7 @@ class _PlacesAutocompleteState extends State<PlacesAutocomplete> {
               hideOnError: widget.hideOnError,
               hideOnLoading: widget.hideOnLoading,
               loadingBuilder: widget.loadingBuilder,
-              transitionBuilder: widget.transitionBuilder,
+              // transitionBuilder: widget.transitionBuilder,
               valueTransformer: widget.valueTransformer,
               enabled: widget.enabled,
               autovalidateMode: widget.autovalidateMode,
@@ -476,20 +476,20 @@ class _PlacesAutocompleteState extends State<PlacesAutocomplete> {
               onSaved: widget.onSaved,
               autoFlipListDirection: widget.autoFlipListDirection,
               autoFlipMinHeight: widget.autoFlipMinHeight,
-              constraints: widget.constraints,
-              customTextField: widget.customTextField,
-              decorationBuilder: widget.decorationBuilder,
-              emptyBuilder: widget.emptyBuilder,
+              // constraints: widget.constraints,
+              // customTextField: widget.customTextField,
+              // decorationBuilder: widget.decorationBuilder,
+              // emptyBuilder: widget.emptyBuilder,
               hideKeyboardOnDrag: widget.hideKeyboardOnDrag,
-              hideOnSelect: widget.hideOnSelect,
-              hideOnUnfocus: widget.hideOnUnfocus,
-              hideWithKeyboard: widget.hideWithKeyboard,
+              // hideOnSelect: widget.hideOnSelect,
+              // hideOnUnfocus: widget.hideOnUnfocus,
+              // hideWithKeyboard: widget.hideWithKeyboard,
               itemSeparatorBuilder: widget.itemSeparatorBuilder,
               listBuilder: widget.listBuilder,
-              offset: widget.offset,
-              retainOnLoading: widget.retainOnLoading,
-              showOnFocus: widget.showOnFocus,
-              suggestionsController: widget.suggestionsController,
+              // offset: widget.offset,
+              // retainOnLoading: widget.retainOnLoading,
+              // showOnFocus: widget.showOnFocus,
+              // suggestionsController: widget.suggestionsController,
             ),
           ),
         ),

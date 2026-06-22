@@ -152,12 +152,12 @@ class PlacesAutocomplete extends HookWidget {
     );
   }
 
-  Widget Function(BuildContext, Suggestion) _defaultItemBuilder() {
+  Widget Function(BuildContext, Suggestion?) _defaultItemBuilder() {
     return (context, content) {
       final mainText =
-          content.placePrediction?.structuredFormat?.mainText?.text ?? "";
+          content?.placePrediction?.structuredFormat?.mainText?.text ?? "";
       final secondaryText =
-          content.placePrediction?.structuredFormat?.secondaryText?.text ?? "";
+          content?.placePrediction?.structuredFormat?.secondaryText?.text ?? "";
 
       final style = Theme.of(context).textTheme.titleMedium?.copyWith(
             color: Colors.grey[600],

@@ -8,7 +8,7 @@ part 'search_config.freezed.dart';
 
 typedef TextFieldBuilder = Widget Function(
     BuildContext, TextEditingController, FocusNode)?;
-typedef ItemBuilder = Widget Function(BuildContext, Suggestion)?;
+typedef ItemBuilder = Widget Function(BuildContext, Suggestion?)?;
 typedef OnSelected = void Function(Suggestion)?;
 typedef ErrorBuilder = Widget Function(BuildContext, Object)?;
 typedef LoadingBuilder = Widget Function(BuildContext)?;

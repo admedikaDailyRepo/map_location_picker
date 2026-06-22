@@ -46,7 +46,7 @@ mixin _$SearchConfig {
   BoxConstraints? get constraints;
   bool get hideOnSelect;
   bool get hideOnUnfocus;
-  bool get hideWithKeyboard;
+  // bool get hideWithKeyboard;
   ItemSeparatorBuilder get itemSeparatorBuilder;
   ListBuilder get listBuilder;
   Offset? get offset;
@@ -136,8 +136,8 @@ mixin _$SearchConfig {
                 other.hideOnSelect == hideOnSelect) &&
             (identical(other.hideOnUnfocus, hideOnUnfocus) ||
                 other.hideOnUnfocus == hideOnUnfocus) &&
-            (identical(other.hideWithKeyboard, hideWithKeyboard) ||
-                other.hideWithKeyboard == hideWithKeyboard) &&
+            // (identical(other.hideWithKeyboard, hideWithKeyboard) ||
+            //     other.hideWithKeyboard == hideWithKeyboard) &&
             (identical(other.itemSeparatorBuilder, itemSeparatorBuilder) ||
                 other.itemSeparatorBuilder == itemSeparatorBuilder) &&
             (identical(other.listBuilder, listBuilder) ||
@@ -199,7 +199,7 @@ mixin _$SearchConfig {
         constraints,
         hideOnSelect,
         hideOnUnfocus,
-        hideWithKeyboard,
+        // hideWithKeyboard,
         itemSeparatorBuilder,
         listBuilder,
         offset,
@@ -217,7 +217,7 @@ mixin _$SearchConfig {
 
   @override
   String toString() {
-    return 'SearchConfig(apiKey: $apiKey, placesApi: $placesApi, placesAllFields: $placesAllFields, placeDetailsFilter: $placeDetailsFilter, placeInstanceFields: $placeInstanceFields, placeFields: $placeFields, searchAllFields: $searchAllFields, searchFields: $searchFields, searchFilter: $searchFilter, searchInstanceFields: $searchInstanceFields, sessionToken: $sessionToken, searchHintText: $searchHintText, searchHintStyle: $searchHintStyle, minCharsForSuggestions: $minCharsForSuggestions, debounceDuration: $debounceDuration, defaultAddressText: $defaultAddressText, initialValue: $initialValue, itemBuilder: $itemBuilder, onSelected: $onSelected, errorBuilder: $errorBuilder, animationDuration: $animationDuration, autoFlipDirection: $autoFlipDirection, direction: $direction, hideOnEmpty: $hideOnEmpty, hideOnError: $hideOnError, hideOnLoading: $hideOnLoading, loadingBuilder: $loadingBuilder, transitionBuilder: $transitionBuilder, autoFlipMinHeight: $autoFlipMinHeight, constraints: $constraints, hideOnSelect: $hideOnSelect, hideOnUnfocus: $hideOnUnfocus, hideWithKeyboard: $hideWithKeyboard, itemSeparatorBuilder: $itemSeparatorBuilder, listBuilder: $listBuilder, offset: $offset, retainOnLoading: $retainOnLoading, showOnFocus: $showOnFocus, suggestionsController: $suggestionsController, decorationBuilder: $decorationBuilder, emptyBuilder: $emptyBuilder, scrollController: $scrollController, focusNode: $focusNode, hideKeyboardOnDrag: $hideKeyboardOnDrag, builder: $builder, cancelToken: $cancelToken)';
+    return 'SearchConfig(apiKey: $apiKey, placesApi: $placesApi, placesAllFields: $placesAllFields, placeDetailsFilter: $placeDetailsFilter, placeInstanceFields: $placeInstanceFields, placeFields: $placeFields, searchAllFields: $searchAllFields, searchFields: $searchFields, searchFilter: $searchFilter, searchInstanceFields: $searchInstanceFields, sessionToken: $sessionToken, searchHintText: $searchHintText, searchHintStyle: $searchHintStyle, minCharsForSuggestions: $minCharsForSuggestions, debounceDuration: $debounceDuration, defaultAddressText: $defaultAddressText, initialValue: $initialValue, itemBuilder: $itemBuilder, onSelected: $onSelected, errorBuilder: $errorBuilder, animationDuration: $animationDuration, autoFlipDirection: $autoFlipDirection, direction: $direction, hideOnEmpty: $hideOnEmpty, hideOnError: $hideOnError, hideOnLoading: $hideOnLoading, loadingBuilder: $loadingBuilder, transitionBuilder: $transitionBuilder, autoFlipMinHeight: $autoFlipMinHeight, constraints: $constraints, hideOnSelect: $hideOnSelect, hideOnUnfocus: $hideOnUnfocus, itemSeparatorBuilder: $itemSeparatorBuilder, listBuilder: $listBuilder, offset: $offset, retainOnLoading: $retainOnLoading, showOnFocus: $showOnFocus, suggestionsController: $suggestionsController, decorationBuilder: $decorationBuilder, emptyBuilder: $emptyBuilder, scrollController: $scrollController, focusNode: $focusNode, hideKeyboardOnDrag: $hideKeyboardOnDrag, builder: $builder, cancelToken: $cancelToken)';
   }
 }
 
@@ -260,7 +260,7 @@ abstract mixin class $SearchConfigCopyWith<$Res> {
       BoxConstraints? constraints,
       bool hideOnSelect,
       bool hideOnUnfocus,
-      bool hideWithKeyboard,
+      // bool hideWithKeyboard,
       ItemSeparatorBuilder itemSeparatorBuilder,
       ListBuilder listBuilder,
       Offset? offset,
@@ -320,7 +320,7 @@ class _$SearchConfigCopyWithImpl<$Res> implements $SearchConfigCopyWith<$Res> {
     Object? constraints = freezed,
     Object? hideOnSelect = null,
     Object? hideOnUnfocus = null,
-    Object? hideWithKeyboard = null,
+    // Object? hideWithKeyboard = null,
     Object? itemSeparatorBuilder = freezed,
     Object? listBuilder = freezed,
     Object? offset = freezed,
@@ -464,10 +464,10 @@ class _$SearchConfigCopyWithImpl<$Res> implements $SearchConfigCopyWith<$Res> {
           ? _self.hideOnUnfocus
           : hideOnUnfocus // ignore: cast_nullable_to_non_nullable
               as bool,
-      hideWithKeyboard: null == hideWithKeyboard
-          ? _self.hideWithKeyboard
-          : hideWithKeyboard // ignore: cast_nullable_to_non_nullable
-              as bool,
+      // hideWithKeyboard: null == hideWithKeyboard
+      //     ? _self.hideWithKeyboard
+      //     : hideWithKeyboard // ignore: cast_nullable_to_non_nullable
+      //         as bool,
       itemSeparatorBuilder: freezed == itemSeparatorBuilder
           ? _self.itemSeparatorBuilder
           : itemSeparatorBuilder // ignore: cast_nullable_to_non_nullable
@@ -650,7 +650,7 @@ extension SearchConfigPatterns on SearchConfig {
             BoxConstraints? constraints,
             bool hideOnSelect,
             bool hideOnUnfocus,
-            bool hideWithKeyboard,
+            // bool hideWithKeyboard,
             ItemSeparatorBuilder itemSeparatorBuilder,
             ListBuilder listBuilder,
             Offset? offset,
@@ -703,7 +703,7 @@ extension SearchConfigPatterns on SearchConfig {
             _that.constraints,
             _that.hideOnSelect,
             _that.hideOnUnfocus,
-            _that.hideWithKeyboard,
+            // _that.hideWithKeyboard,
             _that.itemSeparatorBuilder,
             _that.listBuilder,
             _that.offset,
@@ -770,7 +770,7 @@ extension SearchConfigPatterns on SearchConfig {
             BoxConstraints? constraints,
             bool hideOnSelect,
             bool hideOnUnfocus,
-            bool hideWithKeyboard,
+            // bool hideWithKeyboard,
             ItemSeparatorBuilder itemSeparatorBuilder,
             ListBuilder listBuilder,
             Offset? offset,
@@ -822,7 +822,7 @@ extension SearchConfigPatterns on SearchConfig {
             _that.constraints,
             _that.hideOnSelect,
             _that.hideOnUnfocus,
-            _that.hideWithKeyboard,
+            // _that.hideWithKeyboard,
             _that.itemSeparatorBuilder,
             _that.listBuilder,
             _that.offset,
@@ -888,7 +888,7 @@ extension SearchConfigPatterns on SearchConfig {
             BoxConstraints? constraints,
             bool hideOnSelect,
             bool hideOnUnfocus,
-            bool hideWithKeyboard,
+            // bool hideWithKeyboard,
             ItemSeparatorBuilder itemSeparatorBuilder,
             ListBuilder listBuilder,
             Offset? offset,
@@ -940,7 +940,7 @@ extension SearchConfigPatterns on SearchConfig {
             _that.constraints,
             _that.hideOnSelect,
             _that.hideOnUnfocus,
-            _that.hideWithKeyboard,
+            // _that.hideWithKeyboard,
             _that.itemSeparatorBuilder,
             _that.listBuilder,
             _that.offset,
@@ -996,7 +996,7 @@ class _SearchConfig implements SearchConfig {
       this.constraints = null,
       this.hideOnSelect = true,
       this.hideOnUnfocus = true,
-      this.hideWithKeyboard = true,
+      // this.hideWithKeyboard = true,
       this.itemSeparatorBuilder = null,
       this.listBuilder = null,
       this.offset = null,
@@ -1125,9 +1125,9 @@ class _SearchConfig implements SearchConfig {
   @override
   @JsonKey()
   final bool hideOnUnfocus;
-  @override
-  @JsonKey()
-  final bool hideWithKeyboard;
+  // @override
+  // @JsonKey()
+  // final bool hideWithKeyboard;
   @override
   @JsonKey()
   final ItemSeparatorBuilder itemSeparatorBuilder;
@@ -1243,8 +1243,8 @@ class _SearchConfig implements SearchConfig {
                 other.hideOnSelect == hideOnSelect) &&
             (identical(other.hideOnUnfocus, hideOnUnfocus) ||
                 other.hideOnUnfocus == hideOnUnfocus) &&
-            (identical(other.hideWithKeyboard, hideWithKeyboard) ||
-                other.hideWithKeyboard == hideWithKeyboard) &&
+            // (identical(other.hideWithKeyboard, hideWithKeyboard) ||
+            //     other.hideWithKeyboard == hideWithKeyboard) &&
             (identical(other.itemSeparatorBuilder, itemSeparatorBuilder) ||
                 other.itemSeparatorBuilder == itemSeparatorBuilder) &&
             (identical(other.listBuilder, listBuilder) ||
@@ -1306,7 +1306,7 @@ class _SearchConfig implements SearchConfig {
         constraints,
         hideOnSelect,
         hideOnUnfocus,
-        hideWithKeyboard,
+        // hideWithKeyboard,
         itemSeparatorBuilder,
         listBuilder,
         offset,
@@ -1324,7 +1324,7 @@ class _SearchConfig implements SearchConfig {
 
   @override
   String toString() {
-    return 'SearchConfig(apiKey: $apiKey, placesApi: $placesApi, placesAllFields: $placesAllFields, placeDetailsFilter: $placeDetailsFilter, placeInstanceFields: $placeInstanceFields, placeFields: $placeFields, searchAllFields: $searchAllFields, searchFields: $searchFields, searchFilter: $searchFilter, searchInstanceFields: $searchInstanceFields, sessionToken: $sessionToken, searchHintText: $searchHintText, searchHintStyle: $searchHintStyle, minCharsForSuggestions: $minCharsForSuggestions, debounceDuration: $debounceDuration, defaultAddressText: $defaultAddressText, initialValue: $initialValue, itemBuilder: $itemBuilder, onSelected: $onSelected, errorBuilder: $errorBuilder, animationDuration: $animationDuration, autoFlipDirection: $autoFlipDirection, direction: $direction, hideOnEmpty: $hideOnEmpty, hideOnError: $hideOnError, hideOnLoading: $hideOnLoading, loadingBuilder: $loadingBuilder, transitionBuilder: $transitionBuilder, autoFlipMinHeight: $autoFlipMinHeight, constraints: $constraints, hideOnSelect: $hideOnSelect, hideOnUnfocus: $hideOnUnfocus, hideWithKeyboard: $hideWithKeyboard, itemSeparatorBuilder: $itemSeparatorBuilder, listBuilder: $listBuilder, offset: $offset, retainOnLoading: $retainOnLoading, showOnFocus: $showOnFocus, suggestionsController: $suggestionsController, decorationBuilder: $decorationBuilder, emptyBuilder: $emptyBuilder, scrollController: $scrollController, focusNode: $focusNode, hideKeyboardOnDrag: $hideKeyboardOnDrag, builder: $builder, cancelToken: $cancelToken)';
+    return 'SearchConfig(apiKey: $apiKey, placesApi: $placesApi, placesAllFields: $placesAllFields, placeDetailsFilter: $placeDetailsFilter, placeInstanceFields: $placeInstanceFields, placeFields: $placeFields, searchAllFields: $searchAllFields, searchFields: $searchFields, searchFilter: $searchFilter, searchInstanceFields: $searchInstanceFields, sessionToken: $sessionToken, searchHintText: $searchHintText, searchHintStyle: $searchHintStyle, minCharsForSuggestions: $minCharsForSuggestions, debounceDuration: $debounceDuration, defaultAddressText: $defaultAddressText, initialValue: $initialValue, itemBuilder: $itemBuilder, onSelected: $onSelected, errorBuilder: $errorBuilder, animationDuration: $animationDuration, autoFlipDirection: $autoFlipDirection, direction: $direction, hideOnEmpty: $hideOnEmpty, hideOnError: $hideOnError, hideOnLoading: $hideOnLoading, loadingBuilder: $loadingBuilder, transitionBuilder: $transitionBuilder, autoFlipMinHeight: $autoFlipMinHeight, constraints: $constraints, hideOnSelect: $hideOnSelect, hideOnUnfocus: $hideOnUnfocus, itemSeparatorBuilder: $itemSeparatorBuilder, listBuilder: $listBuilder, offset: $offset, retainOnLoading: $retainOnLoading, showOnFocus: $showOnFocus, suggestionsController: $suggestionsController, decorationBuilder: $decorationBuilder, emptyBuilder: $emptyBuilder, scrollController: $scrollController, focusNode: $focusNode, hideKeyboardOnDrag: $hideKeyboardOnDrag, builder: $builder, cancelToken: $cancelToken)';
   }
 }
 
@@ -1369,7 +1369,7 @@ abstract mixin class _$SearchConfigCopyWith<$Res>
       BoxConstraints? constraints,
       bool hideOnSelect,
       bool hideOnUnfocus,
-      bool hideWithKeyboard,
+      // bool hideWithKeyboard,
       ItemSeparatorBuilder itemSeparatorBuilder,
       ListBuilder listBuilder,
       Offset? offset,
@@ -1430,7 +1430,7 @@ class __$SearchConfigCopyWithImpl<$Res>
     Object? constraints = freezed,
     Object? hideOnSelect = null,
     Object? hideOnUnfocus = null,
-    Object? hideWithKeyboard = null,
+    // Object? hideWithKeyboard = null,
     Object? itemSeparatorBuilder = freezed,
     Object? listBuilder = freezed,
     Object? offset = freezed,
@@ -1574,10 +1574,10 @@ class __$SearchConfigCopyWithImpl<$Res>
           ? _self.hideOnUnfocus
           : hideOnUnfocus // ignore: cast_nullable_to_non_nullable
               as bool,
-      hideWithKeyboard: null == hideWithKeyboard
-          ? _self.hideWithKeyboard
-          : hideWithKeyboard // ignore: cast_nullable_to_non_nullable
-              as bool,
+      // hideWithKeyboard: null == hideWithKeyboard
+      //     ? _self.hideWithKeyboard
+      //     : hideWithKeyboard // ignore: cast_nullable_to_non_nullable
+      //         as bool,
       itemSeparatorBuilder: freezed == itemSeparatorBuilder
           ? _self.itemSeparatorBuilder
           : itemSeparatorBuilder // ignore: cast_nullable_to_non_nullable

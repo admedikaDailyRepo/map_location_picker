@@ -73,7 +73,7 @@ abstract class SearchConfig with _$SearchConfig {
     @Default(null) BoxConstraints? constraints,
     @Default(true) bool hideOnSelect,
     @Default(true) bool hideOnUnfocus,
-    @Default(true) bool hideWithKeyboard,
+    // @Default(true) bool hideWithKeyboard,
     @Default(null) ItemSeparatorBuilder itemSeparatorBuilder,
     @Default(null) ListBuilder listBuilder,
     @Default(null) Offset? offset,

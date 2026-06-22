@@ -55,5 +55,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+<<<<<<< HEAD
+=======
+	<key>UIBackgroundModes</key>
+    <array>
+      <string>location</string>
+    </array>
+>>>>>>> master
 </dict>
 </plist>

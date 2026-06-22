@@ -1,116 +1,87 @@
-import "package:google_maps_webapi/places.dart";
-import 'package:http/http.dart';
+import 'package:dio/dio.dart' show CancelToken;
+import 'package:google_maps_apis/places_new.dart';
 
 import 'logger.dart';
 
-class AutoCompleteState {
-  /// httpClient is used to make network requests.
-  final Client? httpClient;
+/// The autocomplete service for the map location picker.
+/// [AutoCompleteService] service is used to search for places and get the details of the place.
+///
+/// ```dart
+/// final service = AutoCompleteService(
+///   placesApi: PlacesAPINew(apiKey: "YOUR_API_KEY"),
+/// );
+/// ```
+///
+class AutoCompleteService {
+  /// The HTTP client to use for the autocomplete service.
+  final PlacesAPINew? placesApi;
 
-  /// apiHeader is used to add headers to the request.
-  final Map<String, String>? apiHeaders;
+  AutoCompleteService({this.placesApi});
 
-  /// baseUrl is used to build the url for the request.
-  final String? baseUrl;
+  Future<List<Suggestion>> search({
+    required String query,
+    required String apiKey,
+    AutocompleteSearchFilter? filter,
 
-  /// The current state of the autocomplete.
-  List<Prediction> predictions = [];
+    /// if true, all fields will be returned.
+    /// if false, only the fields specified in the fields parameter will be returned.
+    /// ensure [allFields] is false if you are using [fields] parameter.
+    bool allFields = true,
 
-  AutoCompleteState({
-    this.httpClient,
-    this.apiHeaders,
-    this.baseUrl,
-  });
+    /// the fields to return.
+    /// Ensure that allFields = true or fields != null, or instanceFields != null with some field != null.
+    /// [Pricing note](https://developers.google.com/maps/documentation/places/web-service/autocomplete#pricing)
+    ///
+    /// ```
+    ///  Each field group (Basic, Contact, Atmosphere) has a separate billing weight.
+    ///  So selecting more fields increases cost.
+    ///  Examples:
+    ///  fields=name,geometry = cheaper
+    ///  fields=name,geometry,reviews,photos = more expensive.
+    /// ```
+    List<String>? fields,
 
-  /// void future function to get the autocomplete results.
-  Future<List<Prediction>> search(
-    /// final String input,
-    String query,
-
-    /// API key for Google Places API
-    String apiKey, {
-    /// Session token for Google Places API
-    String? sessionToken,
-
-    /// Offset for pagination of results
-    /// offset: int,
-    num? offset,
-
-    /// Origin location for calculating distance from results
-    /// origin: Location(lat: -33.852, lng: 151.211),
-    Location? origin,
-
-    /// Location bounds for restricting results to a radius around a location
-    /// location: Location(lat: -33.867, lng: 151.195)
-    Location? location,
-
-    /// Radius for restricting results to a radius around a location
-    /// radius: Radius in meters
-    num? radius,
-
-    /// Language code for Places API results
-    /// language: 'en',
-    String? language,
-
-    /// Types for restricting results to a set of place types
-    List<String> types = const [],
-
-    /// Components set results to be restricted to a specific area
-    /// components: [Component(Component.country, "us")]
-    List<Component> components = const [],
-
-    /// Bounds for restricting results to a set of bounds
-    bool strictbounds = false,
-
-    /// Region for restricting results to a set of regions
-    /// region: "us"
-    String? region,
+    /// the instance fields to return.
+    /// [Pricing note](https://developers.google.com/maps/documentation/places/web-service/autocomplete#pricing)
+    ///
+    /// ```
+    ///  Each field group (Basic, Contact, Atmosphere) has a separate billing weight.
+    ///  So selecting more fields increases cost.
+    PlacesSuggestions? instanceFields,
+    SessionTokenHandler? sessionToken,
+    CancelToken? cancelToken,
   }) async {
     try {
-      final places = GoogleMapsPlaces(
-        apiKey: apiKey,
-        httpClient: httpClient,
-        apiHeaders: apiHeaders,
-        baseUrl: baseUrl,
-      );
-      final PlacesAutocompleteResponse response = await places.autocomplete(
-        query,
-        region: region,
-        language: language,
-        components: components,
-        location: location,
-        offset: offset,
-        origin: origin,
-        radius: radius,
-        sessionToken: sessionToken,
-        strictbounds: strictbounds,
-        types: types,
+      if (query.isEmpty) return [];
+      final places = placesApi ?? PlacesAPINew(apiKey: apiKey);
+      sessionToken ??= SessionTokenHandler();
+      cancelToken ??= CancelToken();
+      final response = await places.searchAutocomplete(
+        filter: filter ??
+            AutocompleteSearchFilter(
+              input: query,
+              sessionToken: sessionToken.token,
+            ),
+        allFields: allFields,
+        fields: fields,
+        instanceFields: instanceFields,
+        cancelToken: cancelToken,
       );
 
-      /// When get any error from the API, show the error in the console.
-      if (response.hasNoResults ||
-          response.isDenied ||
-          response.isInvalid ||
-          response.isNotFound ||
-          response.unknownError ||
-          response.isOverQueryLimit) {
-        if (query.isNotEmpty) {
-          logger.e(response.errorMessage);
-        }
-        return [];
-      }
-
-      /// Update the results with the new results.
-      predictions = response.predictions;
-
-      logger.d(predictions.map((e) => e.toJson()).toList());
-
-      /// Return the results.
-      return predictions;
+      if (_isErrorResponse(response)) return <Suggestion>[];
+      final suggestions = response.body?.suggestions ?? <Suggestion>[];
+      return suggestions;
     } catch (err) {
-      /// Log the error
-      logger.e(err);
-      return [];
+      mapLogger.e(err);
+      return <Suggestion>[];
     }
+  }
+
+  bool _isErrorResponse(GoogleHTTPResponse<PlacesSuggestions?> response) {
+    final isError = response.error != null && !response.isSuccessful;
+    if (isError) {
+      mapLogger.e(response.error?.error?.toJsonString());
+    }
+    return isError;
   }
 }

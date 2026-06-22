@@ -1,26 +1,28 @@
 name: map_location_picker
 description: Google Map location picker for flutter Based on google_maps_flutter.
-version: 1.3.2
-homepage: https://github.com/mohesu/map_location_picker
-repository: https://github.com/mohesu/map_location_picker
-issue_tracker: https://github.com/mohesu/map_location_picker/issues
-documentation: https://github.com/mohesu/map_location_picker/blob/master/README.md
+version: 3.1.0
+homepage: https://github.com/itsarvinddev/map_location_picker
+repository: https://github.com/itsarvinddev/map_location_picker
+issue_tracker: https://github.com/itsarvinddev/map_location_picker/issues
+documentation: https://github.com/itsarvinddev/map_location_picker/blob/master/README.md
 screenshots:
     - description: "Map Location Picker Decoded Address"
-      path: assets/IMG_2480.png
+      path: assets/iphone_14_pro_1_0.png
     - description: "Map Location Picker Places autocomplete"
-      path: assets/IMG_2482.png
+      path: assets/iphone_14_pro_3_2.png
+    - description: "Map Location Picker dark mode"
+      path: assets/iphone_14_pro_5_4.png
 
 topics:
     - map-picker
     - location-picker
     - flutter-location-picker
     - google-maps-flutter
-    - google-maps
+    - places-autocomplete
 
 environment:
-    sdk: ">=3.1.0 <4.0.0"
-    flutter: ">=3.10.0"
+    sdk: ">=3.6.0 <4.0.0"
+    flutter: ">=3.27.0"
 
 flutter:
     plugin:
@@ -36,29 +38,42 @@ dependencies:
     flutter:
         sdk: flutter
 
-    google_maps_flutter: ^2.9.0
-    # REAL TypeAhead :
-    # form_builder_extra_fields: ^11.0.0
-    # My form_builder_extra_fields : 
-    form_builder_extra_fields: 
-      git:
-        url: https://github.com/admedikaDailyRepo/form_builder_extra_fields.git
-    # path: flutter_inappwebview
-        ref: 10.2.0-my-flutter_typeahead
-    # REAL TypeAhead :
-    # flutter_typeahead: ^5.2.0
-    # My Flutter Typeahead : 
-    flutter_typeahead: 
-      git:
-        url: https://github.com/admedikaDailyRepo/flutter_typeahead.git
-    # path: flutter_inappwebview
-        ref: manogi21/adding_rawscroll
-    google_maps_webapi: ^0.0.22
-    geolocator: ^12.0.0
-    http: ^1.2.2
-    logger: ^2.4.0
+    # google_maps_flutter: ^2.9.0
+    # # REAL TypeAhead :
+    # # form_builder_extra_fields: ^11.0.0
+    # # My form_builder_extra_fields : 
+    # form_builder_extra_fields: 
+    #   git:
+    #     url: https://github.com/admedikaDailyRepo/form_builder_extra_fields.git
+    # # path: flutter_inappwebview
+    #     ref: 10.2.0-my-flutter_typeahead
+    # # REAL TypeAhead :
+    # # flutter_typeahead: ^5.2.0
+    # # My Flutter Typeahead : 
+    # flutter_typeahead: 
+    #   git:
+    #     url: https://github.com/admedikaDailyRepo/flutter_typeahead.git
+    # # path: flutter_inappwebview
+    #     ref: manogi21/adding_rawscroll
+    # google_maps_webapi: ^0.0.22
+    # geolocator: ^12.0.0
+    # http: ^1.2.2
+    # logger: ^2.4.0
+    google_maps_flutter: ^2.13.1
+    flutter_typeahead: ^5.2.0
+    geolocator: ^14.0.2
+    flutter_hooks: ^0.21.3
+    freezed_annotation: ^3.1.0
+    google_maps_apis: ^4.0.0
+    retrofit: ">=4.7.3 <4.9.0"
+    dio: ^5.9.0
+    http: ^1.5.0
+    web: ^1.0.0
 
 dev_dependencies:
     flutter_test:
         sdk: flutter
-    lints: ^4.0.0
+    freezed: ^3.2.3
+    build_runner: ">=2.5.4 <3.5.0"
+    lints: ^6.0.0
+

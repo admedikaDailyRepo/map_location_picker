@@ -50,17 +50,21 @@ dependencies:
     # # REAL TypeAhead :
     # # flutter_typeahead: ^5.2.0
     # # My Flutter Typeahead : 
-    # flutter_typeahead: 
+    flutter_typeahead: 
+      git:
+        url: https://github.com/admedikaDailyRepo/flutter_typeahead.git
+    # path: flutter_inappwebview
+        ref: manogi21/adding_rawscroll_3.41
+    # form_builder_extra_fields: 
     #   git:
-    #     url: https://github.com/admedikaDailyRepo/flutter_typeahead.git
-    # # path: flutter_inappwebview
-    #     ref: manogi21/adding_rawscroll
+    #     url: https://github.com/admedikaDailyRepo/form_builder_extra_fields.git
+    #     ref: 10.2.0-my-flutter_typeahead
     # google_maps_webapi: ^0.0.22
     # geolocator: ^12.0.0
     # http: ^1.2.2
     # logger: ^2.4.0
     google_maps_flutter: ^2.13.1
-    flutter_typeahead: ^5.2.0
+    # flutter_typeahead: ^5.2.0
     geolocator: ^14.0.2
     flutter_hooks: ^0.21.3
     freezed_annotation: ^3.1.0

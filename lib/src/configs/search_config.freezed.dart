@@ -52,7 +52,7 @@ mixin _$SearchConfig {
   Offset? get offset;
   bool get retainOnLoading;
   bool get showOnFocus;
-  SuggestionsController<Suggestion?>? get suggestionsController;
+  SuggestionsController<Suggestion>? get suggestionsController;
   DecorationBuilder get decorationBuilder;
   EmptyBuilder get emptyBuilder;
   ScrollController? get scrollController;
@@ -266,7 +266,7 @@ abstract mixin class $SearchConfigCopyWith<$Res> {
       Offset? offset,
       bool retainOnLoading,
       bool showOnFocus,
-      SuggestionsController<Suggestion?>? suggestionsController,
+      SuggestionsController<Suggestion>? suggestionsController,
       DecorationBuilder decorationBuilder,
       EmptyBuilder emptyBuilder,
       ScrollController? scrollController,
@@ -491,7 +491,7 @@ class _$SearchConfigCopyWithImpl<$Res> implements $SearchConfigCopyWith<$Res> {
       suggestionsController: freezed == suggestionsController
           ? _self.suggestionsController
           : suggestionsController // ignore: cast_nullable_to_non_nullable
-              as SuggestionsController<Suggestion?>?,
+              as SuggestionsController<Suggestion>?,
       decorationBuilder: freezed == decorationBuilder
           ? _self.decorationBuilder
           : decorationBuilder // ignore: cast_nullable_to_non_nullable
@@ -656,7 +656,7 @@ extension SearchConfigPatterns on SearchConfig {
             Offset? offset,
             bool retainOnLoading,
             bool showOnFocus,
-            SuggestionsController<Suggestion?>? suggestionsController,
+            SuggestionsController<Suggestion>? suggestionsController,
             DecorationBuilder decorationBuilder,
             EmptyBuilder emptyBuilder,
             ScrollController? scrollController,
@@ -776,7 +776,7 @@ extension SearchConfigPatterns on SearchConfig {
             Offset? offset,
             bool retainOnLoading,
             bool showOnFocus,
-            SuggestionsController<Suggestion?>? suggestionsController,
+            SuggestionsController<Suggestion>? suggestionsController,
             DecorationBuilder decorationBuilder,
             EmptyBuilder emptyBuilder,
             ScrollController? scrollController,
@@ -894,7 +894,7 @@ extension SearchConfigPatterns on SearchConfig {
             Offset? offset,
             bool retainOnLoading,
             bool showOnFocus,
-            SuggestionsController<Suggestion?>? suggestionsController,
+            SuggestionsController<Suggestion>? suggestionsController,
             DecorationBuilder decorationBuilder,
             EmptyBuilder emptyBuilder,
             ScrollController? scrollController,
@@ -1145,7 +1145,7 @@ class _SearchConfig implements SearchConfig {
   final bool showOnFocus;
   @override
   @JsonKey()
-  final SuggestionsController<Suggestion?>? suggestionsController;
+  final SuggestionsController<Suggestion>? suggestionsController;
   @override
   @JsonKey()
   final DecorationBuilder decorationBuilder;
@@ -1375,7 +1375,7 @@ abstract mixin class _$SearchConfigCopyWith<$Res>
       Offset? offset,
       bool retainOnLoading,
       bool showOnFocus,
-      SuggestionsController<Suggestion?>? suggestionsController,
+      SuggestionsController<Suggestion>? suggestionsController,
       DecorationBuilder decorationBuilder,
       EmptyBuilder emptyBuilder,
       ScrollController? scrollController,
@@ -1601,7 +1601,7 @@ class __$SearchConfigCopyWithImpl<$Res>
       suggestionsController: freezed == suggestionsController
           ? _self.suggestionsController
           : suggestionsController // ignore: cast_nullable_to_non_nullable
-              as SuggestionsController<Suggestion?>?,
+              as SuggestionsController<Suggestion>?,
       decorationBuilder: freezed == decorationBuilder
           ? _self.decorationBuilder
           : decorationBuilder // ignore: cast_nullable_to_non_nullable
